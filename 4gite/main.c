@@ -27,6 +27,7 @@ int main(){
 		printf("6- multiplier le polynome par un nombre\n");
 		printf("7- multiplier le polynome par un monome\n");
 		printf("8- inserer un monome\n");
+		printf("9- deriver le polynome\n");
 		printf("0-QUITTER");
 		printf("\n");
 		printf("  -->");
@@ -103,6 +104,10 @@ int main(){
 				printf("donnez le coefficient");
 				scanf("%d",&coef);
 				insererMonome(P,position,deg,coef);
+				break;
+			}
+			case 9:{
+				derivePoly(P);
 				break;
 			}
 		}

@@ -32,7 +32,7 @@ void multipleMonomePoly(int poly[][20],int a,int deg);
 void trierPoly(int poly[][20]);
 void initialiserPoly(int poly[][20]);//initialise les poly par des 0
 void insererMonome(int L[][20],int position,int deg,int coef);
-
+void derivePoly(int poly[][20]);
 
 
 
@@ -257,5 +257,15 @@ void insererMonome(int L[][20],int position,int deg,int coef){//insere un monome
 	afficherPoly(L,20);
 }
 
-
+void derivePoly(int poly[][20]){
+	int i = 0;
+	for(i=0;i<20;i++){
+		if(poly[0][i] == 0){
+			poly[1][i]=0;
+		}else{
+			poly[1][i]*=poly[0][i];
+			poly[0][i]--;
+		}
+	}
+}
 
