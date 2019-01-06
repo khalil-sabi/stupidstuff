@@ -26,6 +26,7 @@ int main(){
 		printf("5- comparer 2 polynomes\n");
 		printf("6- multiplier le polynome par un nombre\n");
 		printf("7- multiplier le polynome par un monome\n");
+		printf("8- inserer un monome\n");
 		printf("0-QUITTER");
 		printf("\n");
 		printf("  -->");
@@ -92,6 +93,16 @@ int main(){
 				scanf("%d",&degre);
 				
 				multipleMonomePoly(P,a,degre);
+				break;
+			}
+			case 8:{
+				printf("donnez sa position");
+				scanf("%d",&position);
+				printf("donnez le degre");
+				scanf("%d",&deg);
+				printf("donnez le coefficient");
+				scanf("%d",&coef);
+				insererMonome(P,position,deg,coef);
 				break;
 			}
 		}

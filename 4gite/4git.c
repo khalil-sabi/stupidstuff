@@ -31,7 +31,7 @@ void multiplePoly(int Poly[][20],int a);
 void multipleMonomePoly(int poly[][20],int a,int deg);
 void trierPoly(int poly[][20]);
 void initialiserPoly(int poly[][20]);//initialise les poly par des 0
-
+void insererMonome(int L[][20],int position,int deg,int coef);
 
 
 
@@ -235,6 +235,27 @@ void initialiserPoly(int poly[][20]){//initialise le poly par des  0
 	}
 }
 
+void insererMonome(int L[][20],int position,int deg,int coef){//insere un monome et l affiche (la fct afficher trie le polynome avant de l afficher)
+	int i =0,k=0,T[2][20];
+	initialiserPoly(T);//le remplir de 0
+	for(i = 0;i<20;i++){
+		if(i==position){
+			T[0][i]=deg;
+			T[1][i]=coef;
+		}else{
+		T[0][i]=L[0][k];
+		T[1][i]=L[1][k];
+		k++;
+		}
+	}
+	
+	for(i=0;i<20;i++){
+		L[0][i]=T[0][i];
+		L[1][i]=T[1][i];
+	}
+	
+	afficherPoly(L,20);
+}
 
 
 
